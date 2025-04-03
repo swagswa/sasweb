@@ -41,3 +41,8 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# large files
+public/images/DSCF8820_100Mp.jpg
+public/images/DSCF8998_100Mp.jpg
+public/videos/Fin_uni.mov
