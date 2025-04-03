@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import MobileMenu from '../components/MobileMenu';
 import GalleryCard from '../components/GalleryCard';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const artworks = [
   {
@@ -222,19 +223,26 @@ export default function GalleryPage() {
         for (const url of imageUrls) {
           try {
             // Создаем объект изображения для предзагрузки
-            await new Promise((resolve, reject) => {
-              const img = new Image();
-              img.onload = () => {
+            await new Promise((resolve) => {
+              if (typeof window !== 'undefined') {
+                // Используем createElement вместо конструктора Image
+                const img = document.createElement('img');
+                img.onload = () => {
+                  loadedCount++;
+                  console.log(`Загружено ${loadedCount} из ${imageUrls.length} изображений`);
+                  resolve(url);
+                };
+                img.onerror = () => {
+                  console.error(`Ошибка загрузки изображения: ${url}`);
+                  loadedCount++;
+                  resolve(url); // Все равно считаем загруженным, чтобы не блокировать остальные
+                };
+                img.src = url;
+              } else {
+                // На сервере просто считаем изображение загруженным
                 loadedCount++;
-                console.log(`Загружено ${loadedCount} из ${imageUrls.length} изображений`);
                 resolve(url);
-              };
-              img.onerror = () => {
-                console.error(`Ошибка загрузки изображения: ${url}`);
-                loadedCount++;
-                resolve(url); // Все равно считаем загруженным, чтобы не блокировать остальные
-              };
-              img.src = url;
+              }
             });
           } catch (error) {
             console.error('Ошибка загрузки изображения:', url, error);
@@ -278,7 +286,7 @@ export default function GalleryPage() {
     <div className="relative min-h-screen bg-white">
       <div className="fixed top-4 left-4 z-[1000]">
         <Link href="/">
-          <img src="/images/IMG_3471.svg" alt="Logo" className="w-24 h-24 md:w-32 md:h-32" style={{position: 'fixed'}} />
+          <Image src="/images/IMG_3471.svg" alt="Logo" width={128} height={128} className="w-24 h-24 md:w-32 md:h-32" style={{position: 'fixed'}} />
         </Link>
       </div>
       {/* Header с кнопкой меню */}

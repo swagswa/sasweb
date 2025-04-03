@@ -2,10 +2,9 @@
 
 interface YandexVideoPlayerProps {
   src: string;
-  title: string;
 }
 
-export default function YandexVideoPlayer({ src, title }: YandexVideoPlayerProps) {
+export default function YandexVideoPlayer({ src }: YandexVideoPlayerProps) {
   // Преобразуем обычную ссылку на Яндекс.Диск в ссылку для встраивания
   // Формат ссылки: https://disk.yandex.ru/i/XXXX -> https://disk.yandex.ru/video/embed/XXXX
   const embedSrc = src.replace('disk.yandex.ru/i/', 'disk.yandex.ru/video/embed/');

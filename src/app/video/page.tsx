@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import ReactPlayer from 'react-player';
 import MobileMenu from '../components/MobileMenu';
 import { useState, useEffect, useRef } from 'react';
@@ -23,7 +24,7 @@ const videos: VideoProps[] = [
 
 // Компонент для отдельного видеоплеера
 const VideoPlayerWrapper = ({ src, poster, title, subtitle }: VideoProps) => {
-  const playerRef = useRef<any>(null);
+  const playerRef = useRef<ReactPlayer | null>(null);
   const [isReady, setIsReady] = useState(false);
   
   // Удаляем заголовки и надписи из плеера
@@ -112,7 +113,7 @@ export default function VideoPage() {
     <div className="relative min-h-screen bg-white">
       <div className="fixed top-4 left-4 z-[1000]">
         <Link href="/">
-          <img src="/images/IMG_3471.svg" alt="Logo" className="w-24 h-24 md:w-32 md:h-32" style={{position: 'fixed'}} />
+          <Image src="/images/IMG_3471.svg" alt="Logo" width={128} height={128} className="w-24 h-24 md:w-32 md:h-32" style={{position: 'fixed'}} />
         </Link>
       </div>
       {/* Header с кнопкой меню */}
