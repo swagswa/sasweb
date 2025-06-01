@@ -41,7 +41,7 @@ export default function Home() {
   }
 
   return (
-    <main className="relative bg-[#F2F0E6]">
+    <div className="relative bg-[#F2F0E6]">
       {/* Hero секция */}
       <section id="hero" className="relative h-screen w-full overflow-hidden hero-section section-transition z-10">
         {/* Фоновый контейнер */}
@@ -61,21 +61,15 @@ export default function Home() {
         <div className="relative h-full w-full content-wrapper">
           {/* Навигация для десктопа */}
           <div className="absolute top-8 right-12 hidden md:flex gap-8 z-10">
-            <SmoothLink 
-              href="#gallery" 
-              className="text-sm tracking-wider text-white hover:text-gray-300 transition-colors fade-in-up delay-500"
-            >
-              ГАЛЕРЕЯ РАБОТ
+            <SmoothLink href="#artists" className="text-sm tracking-wider text-white hover:text-gray-300 transition-colors fade-in-up delay-500">
+              ХУДОЖНИКИ
             </SmoothLink>
             <Link 
               href="/video" 
-              className="text-sm tracking-wider text-white hover:text-gray-300 transition-colors fade-in-up delay-500"
+              className="text-sm tracking-wider text-white hover:text-gray-300 transition-colors fade-in-up delay-600"
             >
               ВИДЕО
             </Link>
-            <SmoothLink href="#artists" className="text-sm tracking-wider text-white hover:text-gray-300 transition-colors fade-in-up delay-600">
-              ХУДОЖНИКИ
-            </SmoothLink>
             <SmoothLink href="#contacts" className="text-sm tracking-wider text-white hover:text-gray-300 transition-colors fade-in-up delay-700">
               КОНТАКТЫ
             </SmoothLink>
@@ -108,33 +102,24 @@ export default function Home() {
             onClose={() => setIsMobileMenuOpen(false)} 
           />
 
-          {/* Логотип */}
-          <div className="absolute top-8 left-8 z-20 w-32">
-            <div className="relative group transition-all duration-300">
+          {/* Логотип в левом верхнем углу удален */}
+          
+          {/* Центральный SVG вместо текста */}
+          <div className="absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-center">
+            <div className="relative w-[350px] h-[220px] md:w-[600px] md:h-[350px] mx-auto fade-in delay-500">
               <Image
                 src="/images/IMG_3471.svg"
-                alt="Logo"
-                width={200}
-                height={62}
-                className="w-full h-auto drop-shadow-lg fade-in-up delay-300"
+                alt="SAS ART GALLERY"
+                fill
+                className="object-contain"
                 priority
                 loading="eager"
                 quality={100}
                 style={{
-                  filter: 'brightness(0) invert(1)',
-                  transform: 'scale(1.02)',
+                  filter: 'brightness(0) invert(1)'
                 }}
               />
             </div>
-          </div>
-          
-          {/* Центральный текст */}
-          <div className="absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-center">
-            <h2 className="gallery-title fade-in delay-500">
-              SAS
-              <br />ART
-              <br />GALLERY
-            </h2>
           </div>
 
           {/* Текст слева снизу */}
@@ -179,8 +164,14 @@ export default function Home() {
 
       {/* Фоновые изображения удалены */}
 
+      {/* Заголовок секции с художниками */}
+      <div className="container mx-auto px-4 text-center pt-20">
+        <h1 className="text-4xl font-normal">Художники</h1>
+        <div className="w-24 h-0.5 bg-black mx-auto mt-4 mb-8"></div>
+      </div>
+
       {/* Секция с художниками */}
-      <section id="artists" className="relative bg-[#F2F0E6] py-32 w-full z-10">
+      <section id="artists" className="relative bg-[#F2F0E6] py-16 w-full z-10">
         <div className="container mx-auto px-4">
           {/* Первый художник - Алексей */}
           <div className="relative mb-16">
@@ -210,6 +201,67 @@ export default function Home() {
 Работы художника находятся в российских частных и зарубежных собраниях, представлены в Стамбуле, Москве, Лондоне, Париже, Милане, на Кипре и в Дубае, а также в отелях Манжерок, Ориенталь и Фор Сизонс, в собраниях шведской королевской семьи, в музее имени Рериха, Мюльхайм-Рур (Германия) и фонде Майкла Кентского.
                   </p>
                 </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Работы Алексея Фирсова */}
+          <div className="mt-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {/* Первая работа */}
+              <div className="flex flex-col gap-4 scroll-animation">
+                <div className="relative w-full aspect-square">
+                  <Image
+                    src="/images/SAS. Новая.pdf-image-003.jpg"
+                    alt="Люпины. Сныть. Букет"
+                    fill
+                    className="object-cover"
+                    quality={100}
+                  />
+                </div>
+                <h4 className="text-xl font-light">Люпины. Сныть. Букет</h4>
+                <p className="text-gray-600">150×200</p>
+              </div>
+              
+              {/* Вторая работа */}
+              <div className="flex flex-col gap-4 scroll-animation">
+                <div className="relative w-full aspect-square">
+                  <Image
+                    src="/images/SAS. Новая.pdf-image-004.jpg"
+                    alt="Цветение Черёмухи"
+                    fill
+                    className="object-cover"
+                    quality={100}
+                  />
+                </div>
+                <h4 className="text-xl font-light">Цветение Черёмухи</h4>
+                <p className="text-gray-600">150х200</p>
+              </div>
+            </div>
+            
+            {/* Кнопка перехода на страницу художника */}
+            <div className="flex justify-center mt-8">
+              <Link 
+                href="/artist/firsov" 
+                className="inline-block px-6 py-3 text-gray-800 border border-gray-800 hover:bg-gray-800 hover:text-white transition-colors duration-300"
+              >
+                Все работы Алексея Фирсова
+              </Link>
+            </div>
+          </div>
+
+          {/* Разделитель между художниками */}
+          <div className="relative bg-[#F2F0E6] w-full py-12 z-10">
+            <div className="container mx-auto px-4">
+              <div className="flex items-center justify-center">
+                <div className="w-1/4 h-[1px] bg-gray-300"></div>
+                <div className="mx-4">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="6" stroke="#9CA3AF" strokeWidth="1.5"/>
+                    <circle cx="12" cy="12" r="2" fill="#9CA3AF"/>
+                  </svg>
+                </div>
+                <div className="w-1/4 h-[1px] bg-gray-300"></div>
               </div>
             </div>
           </div>
@@ -245,172 +297,240 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Разделитель между секциями художников и галереей */}
-      <div className="relative bg-[#F2F0E6] w-full py-12 z-10">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center">
-            <div className="w-1/4 h-[1px] bg-gray-300"></div>
-            <div className="mx-4">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="6" stroke="#9CA3AF" strokeWidth="1.5"/>
-                <circle cx="12" cy="12" r="2" fill="#9CA3AF"/>
-              </svg>
-            </div>
-            <div className="w-1/4 h-[1px] bg-gray-300"></div>
-          </div>
-        </div>
-      </div>
-
-      {/* Секция галереи */}
-      <section id="gallery" className="relative bg-[#F2F0E6] pt-20 pb-32 w-full z-10">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col items-center mb-16">
-            <h2 className="text-4xl font-light mb-4">Галерея работ</h2>
-            <div className="w-16 h-[1px] bg-gray-400"></div>
-          </div>
-          <div className="space-y-16 md:space-y-32">
-            {/* Первая работа - текст справа */}
-            <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start group">
-              <div className="w-full md:flex-1 relative h-[400px] md:h-[800px] transition-transform duration-700 group-hover:scale-[1.02]">
-                <Image
-                  src="/images/SAS. Новая.pdf-image-003.jpg"
-                  alt="Люпины. Сныть. Букет"
-                  fill
-                  className="object-contain"
-                  quality={100}
-                />
-              </div>
-              <div className="w-full md:w-96 md:sticky md:top-32">
-                <div className="space-y-6">
-                  <h3 className="text-3xl font-light">Люпины. Сныть. Букет</h3>
-                  <p className="text-xl text-gray-700">Алексей Фирсов</p>
-                  <p className="text-lg text-gray-600">150×200</p>
-                  <div className="w-16 h-[1px] bg-gray-300"></div>
+          
+          {/* Работы Надежды Елкиной */}
+          <div className="mt-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {/* Первая работа */}
+              <div className="flex flex-col gap-4 scroll-animation">
+                <div className="relative w-full aspect-square">
+                  <Image
+                    src="/images/SAS. Новая.pdf-image-010.jpg"
+                    alt="Цветение красной яблони"
+                    fill
+                    className="object-cover"
+                    quality={100}
+                  />
                 </div>
+                <h4 className="text-xl font-light">Цветение красной яблони</h4>
+                <p className="text-gray-600">150х200</p>
               </div>
-            </div>
-
-            {/* Работы 2-6 */}
-            <div className="flex flex-col md:flex-row-reverse gap-8 md:gap-16 items-start group">
-              <div className="w-full md:flex-1 relative h-[400px] md:h-[800px] transition-transform duration-700 group-hover:scale-[1.02]">
-                <Image
-                  src="/images/SAS. Новая.pdf-image-004.jpg"
-                  alt="Цветение Черёмухи"
-                  fill
-                  className="object-contain"
-                  quality={100}
-                />
-              </div>
-              <div className="w-full md:w-96 md:sticky md:top-32">
-                <div className="space-y-6">
-                  <h3 className="text-3xl font-light">Цветение Черёмухи</h3>
-                  <p className="text-xl text-gray-700">Алексей Фирсов</p>
-                  <p className="text-lg text-gray-600">150х200</p>
-                  <div className="w-16 h-[1px] bg-gray-300"></div>
-                  <p className="text-gray-600 leading-relaxed"></p>
+              
+              {/* Вторая работа */}
+              <div className="flex flex-col gap-4 scroll-animation">
+                <div className="relative w-full aspect-square">
+                  <Image
+                    src="/images/SAS. Новая.pdf-image-011.jpg"
+                    alt="Дракон охраняющий сакуру"
+                    fill
+                    className="object-cover"
+                    quality={100}
+                  />
                 </div>
+                <h4 className="text-xl font-light">Дракон охраняющий сакуру</h4>
+                <p className="text-gray-600">150х200</p>
               </div>
             </div>
-
-            <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start group">
-              <div className="w-full md:flex-1 relative h-[400px] md:h-[800px] transition-transform duration-700 group-hover:scale-[1.02]">
-                <Image
-                  src="/images/SAS. Новая.pdf-image-005.jpg"
-                  alt="Осенний букет на окне"
-                  fill
-                  className="object-contain"
-                  quality={100}
-                />
-              </div>
-              <div className="w-full md:w-96 md:sticky md:top-32">
-                <div className="space-y-6">
-                  <h3 className="text-3xl font-light">Осенний букет на окне</h3>
-                  <p className="text-xl text-gray-700">Алексей Фирсов</p>
-                  <p className="text-lg text-gray-600">120х100</p>
-                  <div className="w-16 h-[1px] bg-gray-300"></div>
-                  <p className="text-gray-600 leading-relaxed"></p>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row-reverse gap-8 md:gap-16 items-start group">
-              <div className="w-full md:flex-1 relative h-[400px] md:h-[800px] transition-transform duration-700 group-hover:scale-[1.02]">
-                <Image
-                  src="/images/SAS. Новая.pdf-image-006.jpg"
-                  alt="Разнотравье. Букет"
-                  fill
-                  className="object-contain"
-                  quality={100}
-                />
-              </div>
-              <div className="w-full md:w-96 md:sticky md:top-32">
-                <div className="space-y-6">
-                  <h3 className="text-3xl font-light">Разнотравье. Букет</h3>
-                  <p className="text-xl text-gray-700">Алексей Фирсов</p>
-                  <p className="text-lg text-gray-600">150x120</p>
-                  <div className="w-16 h-[1px] bg-gray-300"></div>
-                  <p className="text-gray-600 leading-relaxed"></p>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start group">
-              <div className="w-full md:flex-1 relative h-[400px] md:h-[800px] transition-transform duration-700 group-hover:scale-[1.02]">
-                <Image
-                  src="/images/SAS. Новая.pdf-image-007.jpg"
-                  alt="Камыш"
-                  fill
-                  className="object-contain"
-                  quality={100}
-                />
-              </div>
-              <div className="w-full md:w-96 md:sticky md:top-32">
-                <div className="space-y-6">
-                  <h3 className="text-3xl font-light">Камыш</h3>
-                  <p className="text-xl text-gray-700">Алексей Фирсов</p>
-                  <p className="text-lg text-gray-600">200х150</p>
-                  <div className="w-16 h-[1px] bg-gray-300"></div>
-                  <p className="text-gray-600 leading-relaxed"></p>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row-reverse gap-8 md:gap-16 items-start group">
-              <div className="w-full md:flex-1 relative h-[400px] md:h-[800px] transition-transform duration-700 group-hover:scale-[1.02]">
-                <Image
-                  src="/images/SAS. Новая.pdf-image-008.jpg"
-                  alt="Абстракция"
-                  fill
-                  className="object-contain"
-                  quality={100}
-                />
-              </div>
-              <div className="w-full md:w-96 md:sticky md:top-32">
-                <div className="space-y-6">
-                  <h3 className="text-3xl font-light">Абстракция</h3>
-                  <p className="text-xl text-gray-700">Алексей Фирсов</p>
-                  <p className="text-lg text-gray-600">150х200</p>
-                  <div className="w-16 h-[1px] bg-gray-300"></div>
-                  <p className="text-gray-600 leading-relaxed"></p>
-                </div>
-              </div>
-            </div>
-
-            {/* Кнопка "Посмотреть все работы" */}
-            <div className="flex justify-center pt-16">
-              <a 
-                href="/gallery" 
-                className="inline-block px-8 py-4 text-lg text-gray-800 border-2 border-gray-800 hover:bg-gray-800 hover:text-white transition-colors duration-300"
+            
+            {/* Кнопка перехода на страницу художницы */}
+            <div className="flex justify-center mt-8">
+              <Link 
+                href="/artist/elkina" 
+                className="inline-block px-6 py-3 text-gray-800 border border-gray-800 hover:bg-gray-800 hover:text-white transition-colors duration-300"
               >
-                Посмотреть все работы
-              </a>
+                Все работы Надежды Елкиной
+              </Link>
+            </div>
+          </div>
+
+          {/* Разделитель между художниками */}
+          <div className="relative bg-[#F2F0E6] w-full py-12 z-10">
+            <div className="container mx-auto px-4">
+              <div className="flex items-center justify-center">
+                <div className="w-1/4 h-[1px] bg-gray-300"></div>
+                <div className="mx-4">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="6" stroke="#9CA3AF" strokeWidth="1.5"/>
+                    <circle cx="12" cy="12" r="2" fill="#9CA3AF"/>
+                  </svg>
+                </div>
+                <div className="w-1/4 h-[1px] bg-gray-300"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Третий художник - Валерий и Наталья Черкашины */}
+          <div className="relative">
+            <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-8">
+              <div className="md:col-span-5 md:col-start-2 scroll-animation">
+                <div className="relative w-full aspect-square max-w-[400px] mx-auto">
+                  <div className="absolute inset-0 rounded-full overflow-hidden">
+                    <Image
+                      src="/images/cherkash/avacherk.jpg"
+                      alt="Валерий и Наталья Черкашины"
+                      fill
+                      className="object-cover artist-image"
+                      quality={100}
+                      style={{
+                        objectPosition: 'center center',
+                        transform: 'scale(1.5)'
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="md:col-span-4 md:col-start-8 scroll-animation">
+                <div className="relative">
+                  <div className="absolute -left-8 top-0 w-1 h-16 bg-black/10"></div>
+                  <h2 className="artist-title font-normal text-3xl mb-6 tracking-wider text-black">ВАЛЕРИЙ И НАТАЛЬЯ ЧЕРКАШИНЫ</h2>
+                  <p className="text-gray-600 leading-relaxed">
+                  Супруги Валерий и Наталья — известные фотохудожники и авторы инсталляций, работающие вместе более 40 лет. Их творчество отличается оригинальным взглядом на общественные и культурные процессы, а работы находятся в собраниях Третьяковской галереи, Пушкинского музея, Эрмитажа и других крупных музеев мира. На их счету около 140 персональных выставок в России, Европе и США. В 1992 году они основали собственный арт-проект — «Музей Метрополитен Черкашина», а с 1994 года работают также в Нью-Йорке.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Работы Валерия и Натальи Черкашиных */}
+          <div className="mt-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {/* Первая работа */}
+              <div className="flex flex-col gap-4 scroll-animation">
+                <div className="relative w-full aspect-square">
+                  <Image
+                    src="/images/cherkash/02Futurism 100x70.jpg"
+                    alt="Futurism"
+                    fill
+                    className="object-cover"
+                    quality={100}
+                  />
+                </div>
+                <h4 className="text-xl font-light">Futurism</h4>
+                <p className="text-gray-600">100×70</p>
+              </div>
+              
+              {/* Вторая работа */}
+              <div className="flex flex-col gap-4 scroll-animation">
+                <div className="relative w-full aspect-square">
+                  <Image
+                    src="/images/cherkash/06 Tanez 2 70x54,5.jpg"
+                    alt="Tanez"
+                    fill
+                    className="object-cover"
+                    quality={100}
+                  />
+                </div>
+                <h4 className="text-xl font-light">Tanez</h4>
+                <p className="text-gray-600">70х54,5</p>
+              </div>
+            </div>
+            
+            {/* Кнопка перехода на страницу художников */}
+            <div className="flex justify-center mt-8">
+              <Link 
+                href="/artist/cherkashny" 
+                className="inline-block px-6 py-3 text-gray-800 border border-gray-800 hover:bg-gray-800 hover:text-white transition-colors duration-300"
+              >
+                Все работы Валерия и Натальи Черкашиных
+              </Link>
+            </div>
+          </div>
+
+          {/* Разделитель между художниками */}
+          <div className="relative bg-[#F2F0E6] w-full py-12 z-10">
+            <div className="container mx-auto px-4">
+              <div className="flex items-center justify-center">
+                <div className="w-1/4 h-[1px] bg-gray-300"></div>
+                <div className="mx-4">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="6" stroke="#9CA3AF" strokeWidth="1.5"/>
+                    <circle cx="12" cy="12" r="2" fill="#9CA3AF"/>
+                  </svg>
+                </div>
+                <div className="w-1/4 h-[1px] bg-gray-300"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Четвертый художник - Олег Тыркин */}
+          <div className="relative">
+            <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-8">
+              <div className="md:col-span-4 md:col-start-2 scroll-animation order-2 md:order-1">
+                <div className="relative">
+                  <div className="absolute -left-8 top-0 w-1 h-16 bg-black/10"></div>
+                  <h2 className="artist-title font-normal text-3xl mb-6 tracking-wider text-black">ОЛЕГ ТЫРКИН</h2>
+                  <p className="text-gray-600 leading-relaxed">
+                  Художник, чья биография тесно связана с переломной эпохой 90-х. Родившись во Владимире в 1965 году, он прошёл путь от курсанта лётного училища до одного из ярких представителей современного искусства. Темы полёта и личной свободы стали основой его творчества. Первая персональная выставка состоялась в 1990 году в парижской галерее «Виктор Гюго» и принесла признание профессионального сообщества. С тех пор его работы выставлялись во Франции, Германии, Швейцарии, Англии и России. В проекте «Хроника падения одной звезды» художник переосмысливает миф об Икаре, приглашая зрителя почувствовать себя частью Вселенной и осознать свою причастность к происходящему. В последние годы Тыркин работает в уникальной технике металлизации, соединяя живопись и скульптуру в глубоко символичных произведениях.
+                  </p>
+                </div>
+              </div>
+              <div className="md:col-span-5 md:col-start-7 scroll-animation order-1 md:order-2">
+                <div className="relative w-full aspect-square max-w-[400px] mx-auto">
+                  <div className="absolute inset-0 rounded-full overflow-hidden">
+                    <Image
+                      src="/images/tirkin/ava.jpg"
+                      alt="Олег Тыркин"
+                      fill
+                      className="object-cover artist-image"
+                      quality={100}
+                      style={{
+                        objectPosition: 'center center'
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Работы Олега Тыркина */}
+          <div className="mt-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {/* Первая работа */}
+              <div className="flex flex-col gap-4 scroll-animation">
+                <div className="relative w-full aspect-square">
+                  <Image
+                    src="/images/tirkin/автомат перекоса 90х200 х м 2009.jpg"
+                    alt="Автомат перекоса"
+                    fill
+                    className="object-cover"
+                    quality={100}
+                  />
+                </div>
+                <h4 className="text-xl font-light">Автомат перекоса</h4>
+                <p className="text-gray-600">90х200</p>
+              </div>
+              
+              {/* Вторая работа */}
+              <div className="flex flex-col gap-4 scroll-animation">
+                <div className="relative w-full aspect-square">
+                  <Image
+                    src="/images/tirkin/первое чувство 130х150 х м 2009.jpg"
+                    alt="Первое чувство"
+                    fill
+                    className="object-cover"
+                    quality={100}
+                  />
+                </div>
+                <h4 className="text-xl font-light">Первое чувство</h4>
+                <p className="text-gray-600">130х150</p>
+              </div>
+            </div>
+            
+            {/* Кнопка перехода на страницу художника */}
+            <div className="flex justify-center mt-8">
+              <Link 
+                href="/artist/tirkin" 
+                className="inline-block px-6 py-3 text-gray-800 border border-gray-800 hover:bg-gray-800 hover:text-white transition-colors duration-300"
+              >
+                Все работы Олега Тыркина
+              </Link>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Секция галереи удалена */}
 
       {/* Разделитель между секциями галереи и контактами */}
       <div className="relative bg-[#F2F0E6] w-full py-12 z-10">
@@ -501,6 +621,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }
