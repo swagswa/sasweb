@@ -305,15 +305,15 @@ export default function Home() {
               <div className="flex flex-col gap-4 scroll-animation">
                 <div className="relative w-full aspect-square">
                   <Image
-                    src="/images/SAS. Новая.pdf-image-010.jpg"
-                    alt="Цветение красной яблони"
+                    src="/images/SAS. Новая.pdf-image-014.jpg"
+                    alt="Дерево счастья"
                     fill
                     className="object-cover"
                     quality={100}
                   />
                 </div>
-                <h4 className="text-xl font-light">Цветение красной яблони</h4>
-                <p className="text-gray-600">150х200</p>
+                <h4 className="text-xl font-light">Дерево счастья</h4>
+                <p className="text-gray-600">170х170</p>
               </div>
               
               {/* Вторая работа */}
@@ -384,7 +384,10 @@ export default function Home() {
                   <div className="absolute -left-8 top-0 w-1 h-16 bg-black/10"></div>
                   <h2 className="artist-title font-normal text-3xl mb-6 tracking-wider text-black">ВАЛЕРИЙ И НАТАЛЬЯ ЧЕРКАШИНЫ</h2>
                   <p className="text-gray-600 leading-relaxed">
-                  Супруги Валерий и Наталья — известные фотохудожники и авторы инсталляций, работающие вместе более 40 лет. Их творчество отличается оригинальным взглядом на общественные и культурные процессы, а работы находятся в собраниях Третьяковской галереи, Пушкинского музея, Эрмитажа и других крупных музеев мира. На их счету около 140 персональных выставок в России, Европе и США. В 1992 году они основали собственный арт-проект — «Музей Метрополитен Черкашина», а с 1994 года работают также в Нью-Йорке.
+                  Художники, фотографы, перформансисты, издатели, почётные лекторы, которые работают вместе с 1983 года.
+Начав с традиционных материалов – живописи, графики и фотографии, они постепенно перешли на работу с фотоизображениями, инсталляциями, перформансами, с 1999 года – цифровыми изображениями и видео, а с 2023 года начали сотрудничать с искусственным интеллектом. 
+На их счету более 200 персональных выставок и 270 перформансов в России, Европе и США. Их творчество отличается оригинальным взглядом на общественные и культурные процессы
+Работы Черкашиных находятся в крупнейших музейных коллекциях России и США: Русский музей; Эрмитаж (Санкт-Петербург); ГМИИ им. Пушкина (Москва); The Art Institute of Chicago; The San Francisco MOMA; The Boston Museum of Fine Аrts; The Museum of Art Philadelphia; Houston Museum of Fine Arts; и др.
                   </p>
                 </div>
               </div>
@@ -405,23 +408,23 @@ export default function Home() {
                     quality={100}
                   />
                 </div>
-                <h4 className="text-xl font-light">Futurism</h4>
-                <p className="text-gray-600">100×70</p>
+                <h4 className="text-xl font-light">«Нью-Йорк, Метрополис»</h4>
+                <p className="text-gray-600">60×45 см, стиль Футуризм, цифровой коллаж</p>
               </div>
               
               {/* Вторая работа */}
               <div className="flex flex-col gap-4 scroll-animation">
                 <div className="relative w-full aspect-square">
                   <Image
-                    src="/images/cherkash/06 Tanez 2 70x54,5.jpg"
-                    alt="Tanez"
+                    src="/images/cherkash/03Krest 27,5x27,5.jpg"
+                    alt="Krest"
                     fill
                     className="object-cover"
                     quality={100}
                   />
                 </div>
-                <h4 className="text-xl font-light">Tanez</h4>
-                <p className="text-gray-600">70х54,5</p>
+                <h4 className="text-xl font-light">«Нью-Йорк, перекрёсток»</h4>
+                <p className="text-gray-600">100х100 см, цифровой коллаж</p>
               </div>
             </div>
             

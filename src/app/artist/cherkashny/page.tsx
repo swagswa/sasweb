@@ -8,129 +8,129 @@ import Image from 'next/image';
 
 const artworks = [
   {
-    title: "Futurism",
+    title: "«Нью-Йорк, Метрополис»",
     artist: "Валерий и Наталья Черкашины",
-    size: "100x70",
-    description: "Фотоинсталляция",
+    size: "60×45 см",
+    description: "стиль Футуризм, цифровой коллаж",
     imagePath: "/images/cherkash/02Futurism 100x70.jpg"
   },
   {
-    title: "Balet begun",
+    title: "Серия «Балет, Посвящение Стравинскому» 3",
     artist: "Валерий и Наталья Черкашины",
-    size: "90x67,5",
-    description: "Фотоинсталляция",
+    size: "90х68 см",
+    description: "Цифровой коллаж",
     imagePath: "/images/cherkash/01 Balet begun 90x67,5 200dpi tif.jpg"
   },
   {
-    title: "Balet s lentoi negativ",
+    title: "Серия «Балет, Посвящение Стравинскому» Негатив",
     artist: "Валерий и Наталья Черкашины",
-    size: "90x70",
-    description: "Фотоинсталляция",
+    size: "90х68 см",
+    description: "Цифровой коллаж",
     imagePath: "/images/cherkash/01Balet- s lentoi   negativ.jpg"
   },
   {
-    title: "NY 2003",
+    title: "«Нью-Йорк, квадрат 2» «Максвелл»",
     artist: "Валерий и Наталья Черкашины",
-    size: "100x70",
-    description: "Фотоинсталляция",
+    size: "110х110 см",
+    description: "Цифровой коллаж",
     imagePath: "/images/cherkash/02NY2003n2 копи копия.jpg"
   },
   {
-    title: "Krest",
+    title: "«Нью-Йорк, перекрёсток»",
     artist: "Валерий и Наталья Черкашины",
-    size: "27,5x27,5",
-    description: "Фотоинсталляция",
+    size: "100х100 см",
+    description: "цифровой коллаж",
     imagePath: "/images/cherkash/03Krest 27,5x27,5.jpg"
   },
   {
-    title: "M Novoslobodskaia",
+    title: "«Метро. Станция Новослободская»",
     artist: "Валерий и Наталья Черкашины",
-    size: "115x254",
-    description: "Фотоинсталляция",
+    size: "115х254",
+    description: "Цифровой коллаж",
     imagePath: "/images/cherkash/04 M Novoslobodskaia  115x254.jpg"
   },
   {
-    title: "NY Moda Miss Moto",
+    title: "Серия «Мода Нью-Йорка» 2, «Мисс Моторолла»",
     artist: "Валерий и Наталья Черкашины",
-    size: "90x60",
-    description: "Фотоинсталляция",
+    size: "100х100 см",
+    description: "Цифровой коллаж",
     imagePath: "/images/cherkash/05bNY Moda 6 Miss Moto  rama.jpg"
   },
   {
-    title: "Tanez 2",
+    title: "Серия «Танцы» 6",
     artist: "Валерий и Наталья Черкашины",
-    size: "70x54,5",
-    description: "Фотоинсталляция",
+    size: "130х100 см",
+    description: "Цифровой коллаж",
     imagePath: "/images/cherkash/06 Tanez 2 70x54,5.jpg"
   },
   {
-    title: "Tanez 2 (2)",
+    title: "Серия «Танцы» 4",
     artist: "Валерий и Наталья Черкашины",
-    size: "70x54,5",
-    description: "Фотоинсталляция",
+    size: "130х100 см",
+    description: "Цифровой коллаж",
     imagePath: "/images/cherkash/35i Tanez 2 70x54,5.jpg"
   },
   {
-    title: "Tanez 60x45",
+    title: "Серия «Танцы» 3",
     artist: "Валерий и Наталья Черкашины",
-    size: "60x45",
-    description: "Фотоинсталляция",
+    size: "130х100 см",
+    description: "Цифровой коллаж",
     imagePath: "/images/cherkash/Tanez2 60x45.jpg"
   },
   {
-    title: "Moda NY Metalik",
+    title: "Серия «Мода Нью-Йорка» 1",
     artist: "Валерий и Наталья Черкашины",
-    size: "100x100",
-    description: "Фотоинсталляция",
+    size: "100х100 см",
+    description: "Цифровой коллаж",
     imagePath: "/images/cherkash/13 Moda NY 1 Metalik 3  100x100 .jpg"
   },
   {
-    title: "Moda NY Kimono",
+    title: "Серия «Мода Нью-Йорка» 2, Кимоно",
     artist: "Валерий и Наталья Черкашины",
-    size: "50x50",
-    description: "Фотоинсталляция",
+    size: "100х100 см",
+    description: "Цифровой коллаж",
     imagePath: "/images/cherkash/18 Moda NY Kimono 50x50.jpg"
   },
   {
-    title: "Balet-bokser",
+    title: "Серия «Балет, Посвящение Стравинскому» Негатив 2",
     artist: "Валерий и Наталья Черкашины",
-    size: "66,4x50",
-    description: "Фотоинсталляция",
+    size: "90х68 см",
+    description: "Цифровой коллаж",
     imagePath: "/images/cherkash/27 Balet-bokser 66,4x50.jpg"
   },
   {
-    title: "Balet-granata",
+    title: "Серия «Балет, Посвящение Стравинскому» 6",
     artist: "Валерий и Наталья Черкашины",
-    size: "92x69,75",
-    description: "Фотоинсталляция",
+    size: "90х68 см",
+    description: "2004, Цифровой коллаж",
     imagePath: "/images/cherkash/6Balet- granata 92x69,75.jpg"
   },
   {
-    title: "Yoga",
+    title: "Серия «Йога 3»",
     artist: "Валерий и Наталья Черкашины",
-    size: "80x60",
-    description: "Фотоинсталляция, серебро",
+    size: "60х60 см",
+    description: "2004, Цифровой коллаж",
     imagePath: "/images/cherkash/yoga1 serebroSlitai уменшенная.jpg"
   },
   {
-    title: "Goa 2019 (3)",
+    title: "Серия «Пространства Гоа 5»",
     artist: "Валерий и Наталья Черкашины",
-    size: "80x60",
-    description: "Фотоинсталляция",
+    size: "30х40 см",
+    description: "Пастель, Цифровая обработка",
     imagePath: "/images/cherkash/Goa 2019 (3).jpg"
   },
   {
-    title: "Goa 2019 (12)",
+    title: "Серия «Пространства Гоа 1»",
     artist: "Валерий и Наталья Черкашины",
-    size: "80x60",
-    description: "Фотоинсталляция",
+    size: "30х40 см",
+    description: "Рисунок 2019, Цифровая обработка 2023",
     imagePath: "/images/cherkash/Goa 2019 (12).jpg"
   },
   {
-    title: "Goa 2019 (13)",
+    title: "Серия «Пространства Гоа 3»",
     artist: "Валерий и Наталья Черкашины",
-    size: "80x60",
-    description: "Фотоинсталляция",
+    size: "30х40 см",
+    description: "Рисунок 2019, Цифровая обработка",
     imagePath: "/images/cherkash/Goa 2019 (13).jpg"
   },
   {
@@ -141,82 +141,29 @@ const artworks = [
     imagePath: "/images/cherkash/Goa 2019 (14).jpg"
   },
   {
-    title: "Goa 2019 (17)",
+    title: "Серия «Пространства Гоа 2»",
     artist: "Валерий и Наталья Черкашины",
-    size: "80x60",
-    description: "Фотоинсталляция",
-    imagePath: "/images/cherkash/Goa 2019 (17).jpg"
+    size: "30х40 см",
+    description: "Рисунок, Цифровая обработка",
+    imagePath: ""
   },
   {
-    title: "Цветы (1)",
+    title: "Серия «Акварельные цветы»",
     artist: "Валерий и Наталья Черкашины",
-    size: "80x60",
-    description: "Фотоинсталляция",
-    imagePath: "/images/cherkash/Цветы (1).jpg"
+    size: "30х40 см",
+    description: "Рама 50х40см, Акварель, Цифровая обработка вместо цветы 1-10",
+    imagePath: ""
   },
-  {
-    title: "Цветы (2)",
-    artist: "Валерий и Наталья Черкашины",
-    size: "80x60",
-    description: "Фотоинсталляция",
-    imagePath: "/images/cherkash/Цветы (2).jpg"
-  },
-  {
-    title: "Цветы (3)",
-    artist: "Валерий и Наталья Черкашины",
-    size: "80x60",
-    description: "Фотоинсталляция",
-    imagePath: "/images/cherkash/Цветы (3).jpg"
-  },
-  {
-    title: "Цветы (4)",
-    artist: "Валерий и Наталья Черкашины",
-    size: "80x60",
-    description: "Фотоинсталляция",
-    imagePath: "/images/cherkash/Цветы (4).jpg"
-  },
-  {
-    title: "Цветы (5)",
-    artist: "Валерий и Наталья Черкашины",
-    size: "80x60",
-    description: "Фотоинсталляция",
-    imagePath: "/images/cherkash/Цветы (5).jpg"
-  },
-  {
-    title: "Цветы (6)",
-    artist: "Валерий и Наталья Черкашины",
-    size: "80x60",
-    description: "Фотоинсталляция",
-    imagePath: "/images/cherkash/Цветы (6).jpg"
-  },
-  {
-    title: "Цветы (7)",
-    artist: "Валерий и Наталья Черкашины",
-    size: "80x60",
-    description: "Фотоинсталляция",
-    imagePath: "/images/cherkash/Цветы (7).jpg"
-  },
-  {
-    title: "Цветы (8)",
-    artist: "Валерий и Наталья Черкашины",
-    size: "80x60",
-    description: "Фотоинсталляция",
-    imagePath: "/images/cherkash/Цветы (8).jpg"
-  },
-  {
-    title: "Цветы (9)",
-    artist: "Валерий и Наталья Черкашины",
-    size: "80x60",
-    description: "Фотоинсталляция",
-    imagePath: "/images/cherkash/Цветы (9).jpg"
-  },
-  {
-    title: "Цветы (10)",
-    artist: "Валерий и Наталья Черкашины",
-    size: "80x60",
-    description: "Фотоинсталляция",
-    imagePath: "/images/cherkash/Цветы (10).jpg"
-  }
+
+
+
+
+
+
+
+
+
+
 ];
 
 export default function CherkashPage() {
